@@ -27,6 +27,9 @@ features_train, features_test, labels_train, labels_test = preprocess()
 # import the GaussianNB sklearn module 
 from sklearn.naive_bayes import GaussianNB
 
+# create classifier
+clf = GaussianNB()
+
 # fit the classifier
 clf.fit(features_train, labels_train)
 
