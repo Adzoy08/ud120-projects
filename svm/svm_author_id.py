@@ -28,7 +28,8 @@ from sklearn.svm import SVC
 #create classifier
 clf = SVC(kernel='linear')
 
-
+#fit the classifier
+clf.fit(features_train, labels_train)
 #########################################################
 
 #########################################################
