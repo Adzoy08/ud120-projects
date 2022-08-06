@@ -26,7 +26,8 @@ features_train, features_test, labels_train, labels_test = preprocess()
 from sklearn.svm import SVC
 
 #create classifier
-clf = SVC(kernel='linear')
+#clf = SVC(kernel='linear')
+clf = SVC(kernel='rbf')
 
 #reduce traing dataset to speed up algorithm
 features_train = features_train[:int(len(features_train)/100)]
