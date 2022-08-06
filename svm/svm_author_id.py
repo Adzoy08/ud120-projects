@@ -29,10 +29,14 @@ from sklearn.svm import SVC
 clf = SVC(kernel='linear')
 
 #fit the classifier
+t0 = time()
 clf.fit(features_train, labels_train)
+print("Training Time:", round(time()-t0, 3), "s")
 
 #make predictions
+t0 = time()
 pred = clf.predict(features_test)
+print('Predicting Time:', round(time()-t0, 3), 's')
 
 from sklearn.metrics import accuracy_score
 accuracy = accuracy_score(labels_test, pred)
