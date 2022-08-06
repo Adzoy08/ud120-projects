@@ -28,6 +28,11 @@ from sklearn.svm import SVC
 #create classifier
 clf = SVC(kernel='linear')
 
+#reduce traing dataset to speed up algorithm
+features_train = features_train[:len(features_train)/100]
+labels_train = labels_train[:len(labels_train)/100]
+
+
 #fit the classifier
 t0 = time()
 clf.fit(features_train, labels_train)
