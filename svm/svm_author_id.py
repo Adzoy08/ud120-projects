@@ -9,6 +9,7 @@
 """
     
 import sys
+import numpy as np
 from time import time
 sys.path.append("../tools/")
 from email_preprocess import preprocess
@@ -30,8 +31,8 @@ from sklearn.svm import SVC
 clf = SVC(C=10000, kernel='rbf')
 
 #reduce traing dataset to speed up algorithm
-features_train = features_train[:int(len(features_train)/100)]
-labels_train = labels_train[:int(len(labels_train)/100)]
+#features_train = features_train[:int(len(features_train)/100)]
+#labels_train = labels_train[:int(len(labels_train)/100)]
 
 
 #fit the classifier
@@ -43,17 +44,21 @@ print("Training Time:", round(time()-t0, 3), "s")
 t0 = time()
 pred = clf.predict(features_test)
 
-# Quiz: What class does the SVM (0 or 1, corresponding to Sara 
+# Quiz 1: What class does the SVM (0 or 1, corresponding to Sara 
 # and Chris respectively) predict for element 10 of the test set?
 # The 26th? The 50th?
 # Use the RBF kernel, C=10000 and 1% of the training set
 # NB: assume zero-indexed list, i.e., element #100 -> [100]
-
 answer10 = pred[10]
 answer26 = pred[26]
 answer50 = pred[50]
 print('The prediction of the 10th, 26th and 50th element of the test set are:')
 print(answer10, ', ', answer26, ', ', answer50, ' respectively')
+
+# Quiz 2: How many are predicted to be in the "Chris" (1) class?
+# Use the RBF kernel, C=10000 and the full training set
+chris = np.bincount(pred)
+print(chris)
 print('Predicting Time:', round(time()-t0, 3), 's')
 
 from sklearn.metrics import accuracy_score
