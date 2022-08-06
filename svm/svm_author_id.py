@@ -27,7 +27,7 @@ from sklearn.svm import SVC
 
 #create classifier
 #clf = SVC(kernel='linear')
-clf = SVC(C=100, kernel='rbf')
+clf = SVC(C=1000, kernel='rbf')
 
 #reduce traing dataset to speed up algorithm
 features_train = features_train[:int(len(features_train)/100)]
