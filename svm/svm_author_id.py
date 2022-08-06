@@ -29,8 +29,8 @@ from sklearn.svm import SVC
 clf = SVC(kernel='linear')
 
 #reduce traing dataset to speed up algorithm
-features_train = features_train[:len(features_train)/100]
-labels_train = labels_train[:len(labels_train)/100]
+features_train = features_train[:int(len(features_train)/100)]
+labels_train = labels_train[:int(len(labels_train)/100)]
 
 
 #fit the classifier
