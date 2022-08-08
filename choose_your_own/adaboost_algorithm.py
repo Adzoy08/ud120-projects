@@ -41,8 +41,6 @@ t0 = time()
 clf = clf.fit(features_train, labels_train)
 print("Training Time:", round(time()-t0, 3), "s")
 
-
-
 t0 = time()
 pred = clf.predict(features_test)
 print("Predicting Time:", round(time()-t0, 3), "s")
