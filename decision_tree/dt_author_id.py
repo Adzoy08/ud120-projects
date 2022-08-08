@@ -39,6 +39,7 @@ print("Predicting Time:", round(time()-t0, 3), "s")
 from sklearn.metrics import accuracy_score
 accuracy = accuracy_score(labels_test, pred)
 print(accuracy)
+print("Number of features:", len(features_train[0]))
 #########################################################
 
 
